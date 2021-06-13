@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Counter from './components/Counter';
+import Buttons from './components/Buttons';
 import './App.css';
 
 function App() {
@@ -9,11 +11,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="digit">{counter}</h1>
-      <button className="btn" onClick={() => setCounter(counter+1)}>inc</button>
-      <button className="btn" onClick={() => setCounter(counter-1)}>dec</button>
-      <br />
-      <button className="btn btn-reset" onClick={() => setCounter(0)}>reset</button>
+      <Counter counter={counter} fontSize={220} subtitle={'Click buttons'}/>
+      <Buttons counter={counter} handleSetCounter={setCounter}/>
+      
     </div>
   );
 }
